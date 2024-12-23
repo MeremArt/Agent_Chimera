@@ -6,6 +6,9 @@ import { DiscordClientInterface } from "@ai16z/client-discord";
 import { TelegramClientInterface } from "@ai16z/client-telegram";
 import { TwitterClientInterface } from "@ai16z/client-twitter";
 import { FarcasterAgentClient } from "@ai16z/client-farcaster";
+import { wagerWise } from "./wagerWise";
+import { c3p0Character } from "./c3p0";
+
 import {
     AgentRuntime,
     CacheManager,
@@ -27,6 +30,8 @@ import {
 import { zgPlugin } from "@ai16z/plugin-0g";
 import { goatPlugin } from "@ai16z/plugin-goat";
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";
+import { meremPlugin } from "@ai16z/plugin-news";
+import { testPlugin } from "@ai16z/plugin-test";
 // import { buttplugPlugin } from "@ai16z/plugin-buttplug";
 import {
     coinbaseCommercePlugin,
@@ -39,7 +44,7 @@ import { confluxPlugin } from "@ai16z/plugin-conflux";
 import { imageGenerationPlugin } from "@ai16z/plugin-image-generation";
 import { evmPlugin } from "@ai16z/plugin-evm";
 import { createNodePlugin } from "@ai16z/plugin-node";
-import { solanaPlugin } from "@ai16z/plugin-solana";
+
 import { aptosPlugin, TransferAptosToken } from "@ai16z/plugin-aptos";
 import { teePlugin } from "@ai16z/plugin-tee";
 import Database from "better-sqlite3";
@@ -184,7 +189,7 @@ export async function loadCharacters(
 
     if (loadedCharacters.length === 0) {
         elizaLogger.info("No characters found, using default character");
-        loadedCharacters.push(defaultCharacter);
+        loadedCharacters.push(c3p0Character);
     }
 
     return loadedCharacters;
@@ -374,15 +379,13 @@ export function createAgent(
         character,
         plugins: [
             bootstrapPlugin,
+            meremPlugin,
+
             getSecret(character, "CONFLUX_CORE_PRIVATE_KEY")
                 ? confluxPlugin
                 : null,
             nodePlugin,
-            getSecret(character, "SOLANA_PUBLIC_KEY") ||
-            (getSecret(character, "WALLET_PUBLIC_KEY") &&
-                !getSecret(character, "WALLET_PUBLIC_KEY")?.startsWith("0x"))
-                ? solanaPlugin
-                : null,
+
             getSecret(character, "EVM_PRIVATE_KEY") ||
             (getSecret(character, "WALLET_PUBLIC_KEY") &&
                 !getSecret(character, "WALLET_PUBLIC_KEY")?.startsWith("0x"))
@@ -477,7 +480,7 @@ const startAgents = async () => {
 
     let charactersArg = args.characters || args.character;
 
-    let characters = [defaultCharacter];
+    let characters = [c3p0Character];
 
     if (charactersArg) {
         characters = await loadCharacters(charactersArg);
@@ -493,6 +496,8 @@ const startAgents = async () => {
 
     function chat() {
         const agentId = characters[0].name ?? "Agent";
+        console.log("This is the agent ID");
+        console.log(agentId);
         rl.question("You: ", async (input) => {
             await handleUserInput(input, agentId);
             if (input.toLowerCase() !== "exit") {
