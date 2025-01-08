@@ -159,9 +159,6 @@ importers:
       '@ai16z/plugin-node':
         specifier: workspace:*
         version: link:../packages/plugin-node
-      '@ai16z/plugin-solana':
-        specifier: workspace:*
-        version: link:../packages/plugin-solana
       '@ai16z/plugin-starknet':
         specifier: workspace:*
         version: link:../packages/plugin-starknet

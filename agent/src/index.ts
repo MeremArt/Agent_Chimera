@@ -8,7 +8,7 @@ import { TwitterClientInterface } from "@ai16z/client-twitter";
 import { FarcasterAgentClient } from "@ai16z/client-farcaster";
 import { wagerWise } from "./wagerWise";
 import { c3p0Character } from "./c3p0";
-
+import { chimeraCharacter } from "./chimera";
 import {
     AgentRuntime,
     CacheManager,
@@ -189,7 +189,7 @@ export async function loadCharacters(
 
     if (loadedCharacters.length === 0) {
         elizaLogger.info("No characters found, using default character");
-        loadedCharacters.push(c3p0Character);
+        loadedCharacters.push(chimeraCharacter);
     }
 
     return loadedCharacters;
@@ -480,7 +480,7 @@ const startAgents = async () => {
 
     let charactersArg = args.characters || args.character;
 
-    let characters = [c3p0Character];
+    let characters = [chimeraCharacter];
 
     if (charactersArg) {
         characters = await loadCharacters(charactersArg);
