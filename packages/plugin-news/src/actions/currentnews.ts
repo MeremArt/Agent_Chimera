@@ -1,15 +1,16 @@
 import {
+    Action,
     ActionExample,
     Content,
-    generateText,
     HandlerCallback,
     IAgentRuntime,
     Memory,
     ModelClass,
     State,
-    type Action,
+    generateText,
 } from "@ai16z/eliza";
 
+// Define the Current News Action
 export const currentNewsAction: Action = {
     name: "CurrentNews",
     similes: ["NEWS", "GET_NEWS", "GET_CURRENT_NEWS"],
@@ -24,22 +25,29 @@ export const currentNewsAction: Action = {
         _options: { [key: string]: unknown },
         _callback: HandlerCallback
     ): Promise<boolean> => {
-        async function getCurrentnews(_searchTerm: string) {
-            const response = await fetch(
-                `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=${process.env.NEWS_API_KEY}`
-            );
-            const data = await response.json();
-            return data.articles
-                .slice(0, 5)
-                .map(
-                    (article) =>
-                        `${article.title}\n${article.url}\n${article.content.slice(0, 500)}`
-                )
-                .join("n\n");
+        // Helper function to fetch news
+        async function getCurrentnews(searchTerm: string) {
+            try {
+                const response = await fetch(
+                    `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=${process.env.NEWS_API_KEY}`
+                );
+                if (!response.ok)
+                    throw new Error(`API error: ${response.statusText}`);
+                const data = await response.json();
+                return data.articles
+                    .slice(0, 5)
+                    .map(
+                        (article) =>
+                            `${article.title}\n${article.url}\n${article.content.slice(0, 500)}`
+                    )
+                    .join("\n\n");
+            } catch (error) {
+                console.error("Error fetching news:", error);
+                return "Sorry, I couldn't fetch the news at the moment.";
+            }
         }
 
-        // Create LangChain tools
-
+        // Generate the search term from the user's message
         const context = `Extract the search term from the user's message. This message is ${_message.content.text} only respond with the search term do not include any other text`;
 
         const searchTerm = await generateText({
@@ -49,13 +57,11 @@ export const currentNewsAction: Action = {
             stop: ["/n"],
         });
 
+        // Fetch news based on the search term
         const currentNews = await getCurrentnews(searchTerm);
 
-        const responseText =
-            "The current news for the search term" +
-            searchTerm +
-            "is" +
-            currentNews;
+        // Create a response
+        const responseText = `The current news for the search term "${searchTerm}" is:\n\n${currentNews}`;
 
         const newMemory: Memory = {
             userId: _message.agentId,
@@ -68,12 +74,9 @@ export const currentNewsAction: Action = {
             } as Content,
         };
 
-        // const context = await composeContext({
-        //     state: _state,
-        //     template,
-        // });
         await _runtime.messageManager.createMemory(newMemory);
 
+        // Send response back
         _callback(newMemory.content);
 
         return true;
@@ -92,63 +95,6 @@ export const currentNewsAction: Action = {
                 },
             },
         ],
-
-        [
-            {
-                user: "{{user1}}",
-                content: {
-                    text: "hey, can you update me on what's happening in crypto?",
-                },
-            },
-            {
-                user: "{{user2}}",
-                content: {
-                    text: "I'll fetch the latest crypto news",
-                    action: "GET_NEWS",
-                },
-            },
-        ],
-
-        [
-            {
-                user: "{{user1}}",
-                content: { text: "whats going on with bitcoin today?" },
-            },
-            {
-                user: "{{user2}}",
-                content: {
-                    text: "Let me get you the latest crypto updates",
-                    action: "GET_NEWS",
-                },
-            },
-        ],
-
-        [
-            {
-                user: "{{user1}}",
-                content: { text: "got any news about cryptocurrency?" },
-            },
-            {
-                user: "{{user2}}",
-                content: {
-                    text: "I'll check the current crypto news for you",
-                    action: "GET_NEWS",
-                },
-            },
-        ],
-
-        [
-            {
-                user: "{{user1}}",
-                content: { text: "tell me about recent crypto developments" },
-            },
-            {
-                user: "{{user2}}",
-                content: {
-                    text: "Sure, I'll grab the latest crypto news",
-                    action: "GET_NEWS",
-                },
-            },
-        ],
+        // Add more examples as needed
     ] as ActionExample[][],
-} as Action;
+};
