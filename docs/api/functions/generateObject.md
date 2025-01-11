@@ -20,4 +20,4 @@
 
 ## Defined in
 
-[packages/core/src/generation.ts:676](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L676)
+[packages/core/src/generation.ts:676](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L676)

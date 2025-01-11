@@ -20,4 +20,4 @@ Configuration options specific to the provider.
 
 ## Defined in
 
-[packages/core/src/generation.ts:1182](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1182)
+[packages/core/src/generation.ts:1182](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1182)

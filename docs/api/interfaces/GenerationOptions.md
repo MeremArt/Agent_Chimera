@@ -12,7 +12,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1067](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1067)
+[packages/core/src/generation.ts:1067](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1067)
 
 ***
 
@@ -22,7 +22,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1068](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1068)
+[packages/core/src/generation.ts:1068](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1068)
 
 ***
 
@@ -32,7 +32,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1069](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1069)
+[packages/core/src/generation.ts:1069](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1069)
 
 ***
 
@@ -42,7 +42,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1070](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1070)
+[packages/core/src/generation.ts:1070](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1070)
 
 ***
 
@@ -52,7 +52,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1071](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1071)
+[packages/core/src/generation.ts:1071](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1071)
 
 ***
 
@@ -62,7 +62,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1072](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1072)
+[packages/core/src/generation.ts:1072](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1072)
 
 ***
 
@@ -72,7 +72,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1073](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1073)
+[packages/core/src/generation.ts:1073](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1073)
 
 ***
 
@@ -82,7 +82,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1074](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1074)
+[packages/core/src/generation.ts:1074](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1074)
 
 ***
 
@@ -92,4 +92,4 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1075](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1075)
+[packages/core/src/generation.ts:1075](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1075)

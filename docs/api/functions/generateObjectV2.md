@@ -24,4 +24,4 @@ Configuration options for generating objects.
 
 ## Defined in
 
-[packages/core/src/generation.ts:1097](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1097)
+[packages/core/src/generation.ts:1097](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1097)

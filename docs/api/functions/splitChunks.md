@@ -28,4 +28,4 @@ Promise resolving to array of text chunks with bleed sections
 
 ## Defined in
 
-[packages/core/src/generation.ts:557](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L557)
+[packages/core/src/generation.ts:557](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L557)

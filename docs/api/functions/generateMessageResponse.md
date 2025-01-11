@@ -28,4 +28,4 @@ The completed message.
 
 ## Defined in
 
-[packages/core/src/generation.ts:760](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L760)
+[packages/core/src/generation.ts:760](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L760)

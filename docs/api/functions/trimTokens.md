@@ -28,4 +28,4 @@ The truncated text
 
 ## Defined in
 
-[packages/core/src/generation.ts:456](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L456)
+[packages/core/src/generation.ts:456](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L456)

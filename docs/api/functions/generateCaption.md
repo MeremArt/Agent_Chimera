@@ -26,4 +26,4 @@
 
 ## Defined in
 
-[packages/core/src/generation.ts:1007](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1007)
+[packages/core/src/generation.ts:1007](https://github.com/MeremArt/Agent_Chimera/blob/main/packages/core/src/generation.ts#L1007)
