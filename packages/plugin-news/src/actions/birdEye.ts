@@ -42,9 +42,9 @@ export const birdeyeTokenAction: Action = {
         _callback: HandlerCallback
     ): Promise<boolean> => {
         const agent = new SolanaAgentKit(
-            "XZ9qNLtYuseF6u6pr1s1oGTr3SjLooeZ96Fg6LcJNerugVegzTW6BREXAvLxcWfkXYmk8DLtcd2XCafssUXHMBU",
-            "https://dry-misty-surf.solana-mainnet.quiknode.pro/3f5a226933e73f33db5ce840c220268713b4419f",
-            "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"
+            "mainnet-beta",
+            undefined,
+            "confirmed"
         );
 
         // Create LangChain tools
