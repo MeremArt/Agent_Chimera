@@ -162,7 +162,8 @@ export const solanaToolsAction: Action = {
             _callback(newMemory.content);
 
             return true;
-        } catch (error) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error: any) {
             const errorMemory: Memory = {
                 userId: _message.agentId,
                 agentId: _message.agentId,

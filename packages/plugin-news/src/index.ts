@@ -1,7 +1,7 @@
 import { Plugin } from "@ai16z/eliza";
 
 import { currentNewsAction } from "./actions/currentnews.ts";
-import { birdeyeTokenAction } from "./actions/birdEye.ts";
+
 import { randomEmotionProvider } from "./providers/emotions.ts";
 import { solanaToolsAction } from "./actions/solanaAction.ts";
 
